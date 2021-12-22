@@ -3,10 +3,11 @@ import {
   Bloom,
   DepthOfField,
   EffectComposer,
-  Noise
+  Noise,
 } from "@react-three/postprocessing";
 import HomeBoxes from "./Boxes";
 import GlitchShader from "./shaders/GlitchShader";
+import Swarm from "./Swarm";
 
 const Landing = () => {
   return (
@@ -16,7 +17,7 @@ const Landing = () => {
         height: 100 + "vh",
         position: "fixed",
         top: 0,
-        left: 0
+        left: 0,
       }}
       camera={{ position: [4, 7, 5] }}
     >
@@ -27,10 +28,15 @@ const Landing = () => {
     </EffectComposer> */}
       <ambientLight />
       <pointLight position={[0, 10, 10]} />
+      <pointLight
+        position={[-100, -100, -100]}
+        intensity={10}
+        castShadow
+        color="red"
+      />
       <HomeBoxes />
-
       <EffectComposer>
-        <GlitchShader />
+        {/* <GlitchShader /> */}
         <DepthOfField
           focusDistance={0}
           focalLength={0.02}
@@ -41,6 +47,7 @@ const Landing = () => {
         <Noise opacity={0.02} />
         {/* <Vignette eskil={false} offset={0.1} darkness={1.1} /> */}
       </EffectComposer>
+      <Swarm count={150} position={[0, 10, 0]} />
     </Canvas>
   );
 };
