@@ -1,9 +1,13 @@
 import styled, { keyframes } from "styled-components";
+import LandingMenu from "./LandingMenu";
 
 const LandingTitle = () => {
   return (
     <Wrapper>
-      <Title>Hello, World!</Title>
+      <Title>
+        Hello, World!
+        <LandingMenu />
+      </Title>
     </Wrapper>
   );
 };
