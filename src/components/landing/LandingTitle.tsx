@@ -1,4 +1,6 @@
 import styled, { keyframes } from "styled-components";
+import { fadeIn } from "../styles/animation";
+import LandingFooter from "./LandingFooter";
 import LandingMenu from "./LandingMenu";
 
 const LandingTitle = () => {
@@ -8,6 +10,7 @@ const LandingTitle = () => {
         Hello, World!
         <LandingMenu />
       </Title>
+      <LandingFooter />
     </Wrapper>
   );
 };
@@ -21,15 +24,6 @@ const Wrapper = styled.section`
   align-items: center;
   width: 100vw;
   height: 100vh;
-`;
-
-const fadeIn = keyframes`
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 `;
 
 const Title = styled.h1`

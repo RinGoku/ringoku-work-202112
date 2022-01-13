@@ -24,7 +24,12 @@
     "styled-components": "^5.3.3",
     "three": "^0.135.0",
     "typescript": "^4.5.4",
-    "web-vitals": "^2.1.2"
+    "web-vitals": "^2.1.2",
+    "@fortawesome/fontawesome-svg-core": "^1.2.32",
+    "@fortawesome/free-brands-svg-icons": "^5.15.1",
+    "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "@fortawesome/react-fontawesome": "^0.1.14",
+    "@tailwindcss/typography": "^0.3.1"
   },
   "scripts": {
     "start": "react-app-rewired start",
