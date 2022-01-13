@@ -1,15 +1,15 @@
 import styled from "styled-components";
+import { Config } from "../../config";
 
+const { menus } = Config;
 const LandingMenu = () => {
   return (
     <StyledMenu>
-      <StyledLink
-        href="https://hello-world-blog.vercel.app/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Blog
-      </StyledLink>
+      {menus.map(m => (
+        <StyledLink href={m.url} target="_blank" rel="noopener noreferrer">
+          {m.title}
+        </StyledLink>
+      ))}
     </StyledMenu>
   );
 };
@@ -26,6 +26,10 @@ const StyledLink = styled.a`
   width: 100%;
   color: #000;
   text-decoration: none;
+
+  & + & {
+    margin-top: 8px;
+  }
 `;
 
 export default LandingMenu;
